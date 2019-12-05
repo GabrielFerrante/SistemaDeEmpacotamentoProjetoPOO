@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="efModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="logs">
+    <Key>
+      <PropertyRef Name="LOid" />
+    </Key>
+    <Property Name="LOid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LOoperacao" Type="varchar" MaxLength="60" />
+    <Property Name="LOdata" Type="datetime" Nullable="false" />
+    <Property Name="USid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="materiais">
+    <Key>
+      <PropertyRef Name="MAid" />
+    </Key>
+    <Property Name="MAid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pacotes">
+    <Key>
+      <PropertyRef Name="PAid" />
+    </Key>
+    <Property Name="PAid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PAtipo" Type="varchar" MaxLength="120" Nullable="false" />
+    <Property Name="PAquantidade" Type="int" Nullable="false" />
+    <Property Name="PAlargura" Type="int" Nullable="false" />
+    <Property Name="PAaltura" Type="int" Nullable="false" />
+    <Property Name="PAprofundidade" Type="int" Nullable="false" />
+    <Property Name="PApeso" Type="int" Nullable="false" />
+    <Property Name="MAid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="produtos">
+    <Key>
+      <PropertyRef Name="PRid" />
+    </Key>
+    <Property Name="PRid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PRnome" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="PRpeso" Type="int" Nullable="false" />
+    <Property Name="PRlargura" Type="int" Nullable="false" />
+    <Property Name="PRaltura" Type="int" Nullable="false" />
+    <Property Name="PRprofundidade" Type="int" Nullable="false" />
+    <Property Name="PRquantidade" Type="int" />
+  </EntityType>
+  <EntityType Name="usuarios">
+    <Key>
+      <PropertyRef Name="USid" />
+    </Key>
+    <Property Name="USid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USnome" Type="varchar" MaxLength="120" Nullable="false" />
+    <Property Name="USlogin" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="USsenha" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="Cargo" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <Association Name="MAid">
+    <End Role="materiais" Type="Self.materiais" Multiplicity="1" />
+    <End Role="pacotes" Type="Self.pacotes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="materiais">
+        <PropertyRef Name="MAid" />
+      </Principal>
+      <Dependent Role="pacotes">
+        <PropertyRef Name="MAid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="USid">
+    <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+    <End Role="logs" Type="Self.logs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="USid" />
+      </Principal>
+      <Dependent Role="logs">
+        <PropertyRef Name="USid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="alterarPacote" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PAid" Type="int" Mode="In" />
+    <Parameter Name="PAtipo" Type="varchar" Mode="In" />
+    <Parameter Name="PAquantidade" Type="int" Mode="In" />
+    <Parameter Name="PAlargura" Type="int" Mode="In" />
+    <Parameter Name="PAaltura" Type="int" Mode="In" />
+    <Parameter Name="PAprofundidade" Type="int" Mode="In" />
+    <Parameter Name="PApeso" Type="int" Mode="In" />
+    <Parameter Name="MAmaterial" Type="int" Mode="In" />
+    <Parameter Name="UsuarioLogado" Type="int" Mode="In" />
+  </Function>
+  <Function Name="alterarProduto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PRid" Type="int" Mode="In" />
+    <Parameter Name="PRnome" Type="varchar" Mode="In" />
+    <Parameter Name="PRpeso" Type="int" Mode="In" />
+    <Parameter Name="PRlargura" Type="int" Mode="In" />
+    <Parameter Name="PRaltura" Type="int" Mode="In" />
+    <Parameter Name="PRprofundidade" Type="int" Mode="In" />
+    <Parameter Name="UsuarioLogado" Type="int" Mode="In" />
+    <Parameter Name="PRquantidade" Type="int" Mode="In" />
+  </Function>
+  <Function Name="alterarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="USid" Type="int" Mode="In" />
+    <Parameter Name="USnome" Type="varchar" Mode="In" />
+    <Parameter Name="USlogin" Type="varchar" Mode="In" />
+    <Parameter Name="USsenha" Type="varchar" Mode="In" />
+    <Parameter Name="Cargo" Type="varchar" Mode="In" />
+    <Parameter Name="UserLogado" Type="int" Mode="In" />
+  </Function>
+  <Function Name="salvarPacote" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PAtipo" Type="varchar" Mode="In" />
+    <Parameter Name="PAquantidade" Type="int" Mode="In" />
+    <Parameter Name="PAlargura" Type="int" Mode="In" />
+    <Parameter Name="PAaltura" Type="int" Mode="In" />
+    <Parameter Name="PAprofundidade" Type="int" Mode="In" />
+    <Parameter Name="PApeso" Type="int" Mode="In" />
+    <Parameter Name="MAmaterial" Type="int" Mode="In" />
+    <Parameter Name="UsuarioLogado" Type="int" Mode="In" />
+  </Function>
+  <Function Name="salvarProduto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PRnome" Type="varchar" Mode="In" />
+    <Parameter Name="PRpeso" Type="int" Mode="In" />
+    <Parameter Name="PRlargura" Type="int" Mode="In" />
+    <Parameter Name="PRaltura" Type="int" Mode="In" />
+    <Parameter Name="PRprofundidade" Type="int" Mode="In" />
+    <Parameter Name="UsuarioLogado" Type="int" Mode="In" />
+    <Parameter Name="PRquantidade" Type="int" Mode="In" />
+  </Function>
+  <Function Name="salvarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="USnome" Type="varchar" Mode="In" />
+    <Parameter Name="USlogin" Type="varchar" Mode="In" />
+    <Parameter Name="USsenha" Type="varchar" Mode="In" />
+    <Parameter Name="Cargo" Type="varchar" Mode="In" />
+    <Parameter Name="USid" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="efModelStoreContainer">
+    <EntitySet Name="logs" EntityType="Self.logs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="materiais" EntityType="Self.materiais" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pacotes" EntityType="Self.pacotes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="produtos" EntityType="Self.produtos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="MAid" Association="Self.MAid">
+      <End Role="materiais" EntitySet="materiais" />
+      <End Role="pacotes" EntitySet="pacotes" />
+    </AssociationSet>
+    <AssociationSet Name="USid" Association="Self.USid">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="logs" EntitySet="logs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{925AA6B4-83BC-469B-B3C1-B7FBEAE1738C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SistemaDeEmpacotamento</RootNamespace>
+    <AssemblyName>SistemaDeEmpacotamento</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BinPackingAlgorithms\Algorithms\AlgorithmBase.cs" />
+    <Compile Include="BinPackingAlgorithms\Algorithms\AlgorithmType.cs" />
+    <Compile Include="BinPackingAlgorithms\Algorithms\EB_AFIT.cs" />
+    <Compile Include="BinPackingAlgorithms\Algorithms\IPackingAlgorithm.cs" />
+    <Compile Include="BinPackingAlgorithms\Entities\AlgorithmPackingResult.cs" />
+    <Compile Include="BinPackingAlgorithms\Entities\Container.cs" />
+    <Compile Include="BinPackingAlgorithms\Entities\ContainerPackingResult.cs" />
+    <Compile Include="BinPackingAlgorithms\Entities\Item.cs" />
+    <Compile Include="BinPackingAlgorithms\PackingService.cs" />
+    <Compile Include="efModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>efModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="efModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>efModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="efModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>efModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ItemTabelaResultado.cs" />
+    <Compile Include="log.cs">
+      <DependentUpon>efModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="materiai.cs">
+      <DependentUpon>efModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pacote.cs">
+      <DependentUpon>efModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="produto.cs">
+      <DependentUpon>efModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usuario.cs">
+      <DependentUpon>efModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmLogs.Designer.cs">
+      <DependentUpon>frmLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCadastroEmbalagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCadastroEmbalagem.Designer.cs">
+      <DependentUpon>frmCadastroEmbalagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCadastroProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCadastroProduto.Designer.cs">
+      <DependentUpon>frmCadastroProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCadastroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCadastroUsuario.Designer.cs">
+      <DependentUpon>frmCadastroUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCalculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCalculo.Designer.cs">
+      <DependentUpon>frmCalculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmQuantidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmQuantidade.Designer.cs">
+      <DependentUpon>frmQuantidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmResultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmResultado.Designer.cs">
+      <DependentUpon>frmResultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTelaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTelaPrincipal.Designer.cs">
+      <DependentUpon>frmTelaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\frmCadastroEmbalagem.resx">
+      <DependentUpon>frmCadastroEmbalagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCadastroProduto.resx">
+      <DependentUpon>frmCadastroProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCadastroUsuario.resx">
+      <DependentUpon>frmCadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCalculo.resx">
+      <DependentUpon>frmCalculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmLogs.resx">
+      <DependentUpon>frmLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmQuantidade.resx">
+      <DependentUpon>frmQuantidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmResultado.resx">
+      <DependentUpon>frmResultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTelaPrincipal.resx">
+      <DependentUpon>frmTelaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EntityDeploy Include="efModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>efModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="efModel.edmx.diagram">
+      <DependentUpon>efModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="efModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>efModel.edmx</DependentUpon>
+      <LastGenOutput>efModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="efModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>efModel.edmx</DependentUpon>
+      <LastGenOutput>efModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="img\Fundo.jpg" />
+    <Content Include="img\fundo1.jpg" />
+    <Content Include="img\Login.ico" />
+    <Content Include="img\login.png" />
+    <Content Include="img\LogoMarca.png" />
+    <Content Include="img\LogoMarca32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

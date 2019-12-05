@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="efModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="logs">
+          <Key>
+            <PropertyRef Name="LOid" />
+          </Key>
+          <Property Name="LOid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LOoperacao" Type="varchar" MaxLength="60" />
+          <Property Name="LOdata" Type="datetime" Nullable="false" />
+          <Property Name="USid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="materiais">
+          <Key>
+            <PropertyRef Name="MAid" />
+          </Key>
+          <Property Name="MAid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pacotes">
+          <Key>
+            <PropertyRef Name="PAid" />
+          </Key>
+          <Property Name="PAid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PAtipo" Type="varchar" MaxLength="120" Nullable="false" />
+          <Property Name="PAquantidade" Type="int" Nullable="false" />
+          <Property Name="PAlargura" Type="int" Nullable="false" />
+          <Property Name="PAaltura" Type="int" Nullable="false" />
+          <Property Name="PAprofundidade" Type="int" Nullable="false" />
+          <Property Name="PApeso" Type="int" Nullable="false" />
+          <Property Name="MAid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="produtos">
+          <Key>
+            <PropertyRef Name="PRid" />
+          </Key>
+          <Property Name="PRid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PRnome" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="PRpeso" Type="int" Nullable="false" />
+          <Property Name="PRlargura" Type="int" Nullable="false" />
+          <Property Name="PRaltura" Type="int" Nullable="false" />
+          <Property Name="PRprofundidade" Type="int" Nullable="false" />
+          <Property Name="PRquantidade" Type="int" />
+        </EntityType>
+        <EntityType Name="usuarios">
+          <Key>
+            <PropertyRef Name="USid" />
+          </Key>
+          <Property Name="USid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USnome" Type="varchar" MaxLength="120" Nullable="false" />
+          <Property Name="USlogin" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="USsenha" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="Cargo" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <Association Name="MAid">
+          <End Role="materiais" Type="Self.materiais" Multiplicity="1" />
+          <End Role="pacotes" Type="Self.pacotes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="materiais">
+              <PropertyRef Name="MAid" />
+            </Principal>
+            <Dependent Role="pacotes">
+              <PropertyRef Name="MAid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USid">
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+          <End Role="logs" Type="Self.logs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="USid" />
+            </Principal>
+            <Dependent Role="logs">
+              <PropertyRef Name="USid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="alterarPacote" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PAid" Type="int" Mode="In" />
+          <Parameter Name="PAtipo" Type="varchar" Mode="In" />
+          <Parameter Name="PAquantidade" Type="int" Mode="In" />
+          <Parameter Name="PAlargura" Type="int" Mode="In" />
+          <Parameter Name="PAaltura" Type="int" Mode="In" />
+          <Parameter Name="PAprofundidade" Type="int" Mode="In" />
+          <Parameter Name="PApeso" Type="int" Mode="In" />
+          <Parameter Name="MAmaterial" Type="int" Mode="In" />
+          <Parameter Name="UsuarioLogado" Type="int" Mode="In" />
+        </Function>
+        <Function Name="alterarProduto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PRid" Type="int" Mode="In" />
+          <Parameter Name="PRnome" Type="varchar" Mode="In" />
+          <Parameter Name="PRpeso" Type="int" Mode="In" />
+          <Parameter Name="PRlargura" Type="int" Mode="In" />
+          <Parameter Name="PRaltura" Type="int" Mode="In" />
+          <Parameter Name="PRprofundidade" Type="int" Mode="In" />
+          <Parameter Name="UsuarioLogado" Type="int" Mode="In" />
+          <Parameter Name="PRquantidade" Type="int" Mode="In" />
+        </Function>
+        <Function Name="alterarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="USid" Type="int" Mode="In" />
+          <Parameter Name="USnome" Type="varchar" Mode="In" />
+          <Parameter Name="USlogin" Type="varchar" Mode="In" />
+          <Parameter Name="USsenha" Type="varchar" Mode="In" />
+          <Parameter Name="Cargo" Type="varchar" Mode="In" />
+          <Parameter Name="UserLogado" Type="int" Mode="In" />
+        </Function>
+        <Function Name="salvarPacote" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PAtipo" Type="varchar" Mode="In" />
+          <Parameter Name="PAquantidade" Type="int" Mode="In" />
+          <Parameter Name="PAlargura" Type="int" Mode="In" />
+          <Parameter Name="PAaltura" Type="int" Mode="In" />
+          <Parameter Name="PAprofundidade" Type="int" Mode="In" />
+          <Parameter Name="PApeso" Type="int" Mode="In" />
+          <Parameter Name="MAmaterial" Type="int" Mode="In" />
+          <Parameter Name="UsuarioLogado" Type="int" Mode="In" />
+        </Function>
+        <Function Name="salvarProduto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PRnome" Type="varchar" Mode="In" />
+          <Parameter Name="PRpeso" Type="int" Mode="In" />
+          <Parameter Name="PRlargura" Type="int" Mode="In" />
+          <Parameter Name="PRaltura" Type="int" Mode="In" />
+          <Parameter Name="PRprofundidade" Type="int" Mode="In" />
+          <Parameter Name="UsuarioLogado" Type="int" Mode="In" />
+          <Parameter Name="PRquantidade" Type="int" Mode="In" />
+        </Function>
+        <Function Name="salvarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="USnome" Type="varchar" Mode="In" />
+          <Parameter Name="USlogin" Type="varchar" Mode="In" />
+          <Parameter Name="USsenha" Type="varchar" Mode="In" />
+          <Parameter Name="Cargo" Type="varchar" Mode="In" />
+          <Parameter Name="USid" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="efModelStoreContainer">
+          <EntitySet Name="logs" EntityType="Self.logs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="materiais" EntityType="Self.materiais" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pacotes" EntityType="Self.pacotes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="produtos" EntityType="Self.produtos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="MAid" Association="Self.MAid">
+            <End Role="materiais" EntitySet="materiais" />
+            <End Role="pacotes" EntitySet="pacotes" />
+          </AssociationSet>
+          <AssociationSet Name="USid" Association="Self.USid">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="logs" EntitySet="logs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="efModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="log">
+          <Key>
+            <PropertyRef Name="LOid" />
+          </Key>
+          <Property Name="LOid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LOoperacao" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="LOdata" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="USid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="Self.USid" FromRole="logs" ToRole="usuarios" />
+        </EntityType>
+        <EntityType Name="materiai">
+          <Key>
+            <PropertyRef Name="MAid" />
+          </Key>
+          <Property Name="MAid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="pacotes" Relationship="Self.MAid" FromRole="materiais" ToRole="pacotes" />
+        </EntityType>
+        <EntityType Name="pacote">
+          <Key>
+            <PropertyRef Name="PAid" />
+          </Key>
+          <Property Name="PAid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PAtipo" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PAquantidade" Type="Int32" Nullable="false" />
+          <Property Name="PAlargura" Type="Int32" Nullable="false" />
+          <Property Name="PAaltura" Type="Int32" Nullable="false" />
+          <Property Name="PAprofundidade" Type="Int32" Nullable="false" />
+          <Property Name="PApeso" Type="Int32" Nullable="false" />
+          <Property Name="MAid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="materiai" Relationship="Self.MAid" FromRole="pacotes" ToRole="materiais" />
+        </EntityType>
+        <EntityType Name="produto">
+          <Key>
+            <PropertyRef Name="PRid" />
+          </Key>
+          <Property Name="PRid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PRnome" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PRpeso" Type="Int32" Nullable="false" />
+          <Property Name="PRlargura" Type="Int32" Nullable="false" />
+          <Property Name="PRaltura" Type="Int32" Nullable="false" />
+          <Property Name="PRprofundidade" Type="Int32" Nullable="false" />
+          <Property Name="PRquantidade" Type="Int32" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="USid" />
+          </Key>
+          <Property Name="USid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USnome" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USlogin" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USsenha" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cargo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="logs" Relationship="Self.USid" FromRole="usuarios" ToRole="logs" />
+        </EntityType>
+        <Association Name="USid">
+          <End Role="usuarios" Type="Self.usuario" Multiplicity="1" />
+          <End Role="logs" Type="Self.log" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="USid" />
+            </Principal>
+            <Dependent Role="logs">
+              <PropertyRef Name="USid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MAid">
+          <End Role="materiais" Type="Self.materiai" Multiplicity="1" />
+          <End Role="pacotes" Type="Self.pacote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="materiais">
+              <PropertyRef Name="MAid" />
+            </Principal>
+            <Dependent Role="pacotes">
+              <PropertyRef Name="MAid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="logs" EntityType="Self.log" />
+          <EntitySet Name="materiais" EntityType="Self.materiai" />
+          <EntitySet Name="pacotes" EntityType="Self.pacote" />
+          <EntitySet Name="produtos" EntityType="Self.produto" />
+          <EntitySet Name="usuarios" EntityType="Self.usuario" />
+          <AssociationSet Name="USid" Association="Self.USid">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="logs" EntitySet="logs" />
+          </AssociationSet>
+          <AssociationSet Name="MAid" Association="Self.MAid">
+            <End Role="materiais" EntitySet="materiais" />
+            <End Role="pacotes" EntitySet="pacotes" />
+          </AssociationSet>
+          <FunctionImport Name="alterarPacote">
+            <Parameter Name="PAid" Mode="In" Type="Int32" />
+            <Parameter Name="PAtipo" Mode="In" Type="String" />
+            <Parameter Name="PAquantidade" Mode="In" Type="Int32" />
+            <Parameter Name="PAlargura" Mode="In" Type="Int32" />
+            <Parameter Name="PAaltura" Mode="In" Type="Int32" />
+            <Parameter Name="PAprofundidade" Mode="In" Type="Int32" />
+            <Parameter Name="PApeso" Mode="In" Type="Int32" />
+            <Parameter Name="MAmaterial" Mode="In" Type="Int32" />
+            <Parameter Name="UsuarioLogado" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="alterarProduto">
+            <Parameter Name="PRid" Mode="In" Type="Int32" />
+            <Parameter Name="PRnome" Mode="In" Type="String" />
+            <Parameter Name="PRpeso" Mode="In" Type="Int32" />
+            <Parameter Name="PRlargura" Mode="In" Type="Int32" />
+            <Parameter Name="PRaltura" Mode="In" Type="Int32" />
+            <Parameter Name="PRprofundidade" Mode="In" Type="Int32" />
+            <Parameter Name="UsuarioLogado" Mode="In" Type="Int32" />
+            <Parameter Name="PRquantidade" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="alterarUsuario">
+            <Parameter Name="USid" Mode="In" Type="Int32" />
+            <Parameter Name="USnome" Mode="In" Type="String" />
+            <Parameter Name="USlogin" Mode="In" Type="String" />
+            <Parameter Name="USsenha" Mode="In" Type="String" />
+            <Parameter Name="Cargo" Mode="In" Type="String" />
+            <Parameter Name="UserLogado" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="salvarPacote">
+            <Parameter Name="PAtipo" Mode="In" Type="String" />
+            <Parameter Name="PAquantidade" Mode="In" Type="Int32" />
+            <Parameter Name="PAlargura" Mode="In" Type="Int32" />
+            <Parameter Name="PAaltura" Mode="In" Type="Int32" />
+            <Parameter Name="PAprofundidade" Mode="In" Type="Int32" />
+            <Parameter Name="PApeso" Mode="In" Type="Int32" />
+            <Parameter Name="MAmaterial" Mode="In" Type="Int32" />
+            <Parameter Name="UsuarioLogado" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="salvarProduto">
+            <Parameter Name="PRnome" Mode="In" Type="String" />
+            <Parameter Name="PRpeso" Mode="In" Type="Int32" />
+            <Parameter Name="PRlargura" Mode="In" Type="Int32" />
+            <Parameter Name="PRaltura" Mode="In" Type="Int32" />
+            <Parameter Name="PRprofundidade" Mode="In" Type="Int32" />
+            <Parameter Name="UsuarioLogado" Mode="In" Type="Int32" />
+            <Parameter Name="PRquantidade" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="salvarUsuario">
+            <Parameter Name="USnome" Mode="In" Type="String" />
+            <Parameter Name="USlogin" Mode="In" Type="String" />
+            <Parameter Name="USsenha" Mode="In" Type="String" />
+            <Parameter Name="Cargo" Mode="In" Type="String" />
+            <Parameter Name="USid" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="efModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="logs">
+            <EntityTypeMapping TypeName="efModel.log">
+              <MappingFragment StoreEntitySet="logs">
+                <ScalarProperty Name="LOid" ColumnName="LOid" />
+                <ScalarProperty Name="LOoperacao" ColumnName="LOoperacao" />
+                <ScalarProperty Name="LOdata" ColumnName="LOdata" />
+                <ScalarProperty Name="USid" ColumnName="USid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="materiais">
+            <EntityTypeMapping TypeName="efModel.materiai">
+              <MappingFragment StoreEntitySet="materiais">
+                <ScalarProperty Name="MAid" ColumnName="MAid" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pacotes">
+            <EntityTypeMapping TypeName="efModel.pacote">
+              <MappingFragment StoreEntitySet="pacotes">
+                <ScalarProperty Name="PAid" ColumnName="PAid" />
+                <ScalarProperty Name="PAtipo" ColumnName="PAtipo" />
+                <ScalarProperty Name="PAquantidade" ColumnName="PAquantidade" />
+                <ScalarProperty Name="PAlargura" ColumnName="PAlargura" />
+                <ScalarProperty Name="PAaltura" ColumnName="PAaltura" />
+                <ScalarProperty Name="PAprofundidade" ColumnName="PAprofundidade" />
+                <ScalarProperty Name="PApeso" ColumnName="PApeso" />
+                <ScalarProperty Name="MAid" ColumnName="MAid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="produtos">
+            <EntityTypeMapping TypeName="efModel.produto">
+              <MappingFragment StoreEntitySet="produtos">
+                <ScalarProperty Name="PRquantidade" ColumnName="PRquantidade" />
+                <ScalarProperty Name="PRid" ColumnName="PRid" />
+                <ScalarProperty Name="PRnome" ColumnName="PRnome" />
+                <ScalarProperty Name="PRpeso" ColumnName="PRpeso" />
+                <ScalarProperty Name="PRlargura" ColumnName="PRlargura" />
+                <ScalarProperty Name="PRaltura" ColumnName="PRaltura" />
+                <ScalarProperty Name="PRprofundidade" ColumnName="PRprofundidade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuarios">
+            <EntityTypeMapping TypeName="efModel.usuario">
+              <MappingFragment StoreEntitySet="usuarios">
+                <ScalarProperty Name="USid" ColumnName="USid" />
+                <ScalarProperty Name="USnome" ColumnName="USnome" />
+                <ScalarProperty Name="USlogin" ColumnName="USlogin" />
+                <ScalarProperty Name="USsenha" ColumnName="USsenha" />
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="alterarPacote" FunctionName="efModel.Store.alterarPacote" />
+          <FunctionImportMapping FunctionImportName="alterarProduto" FunctionName="efModel.Store.alterarProduto" />
+          <FunctionImportMapping FunctionImportName="alterarUsuario" FunctionName="efModel.Store.alterarUsuario" />
+          <FunctionImportMapping FunctionImportName="salvarPacote" FunctionName="efModel.Store.salvarPacote" />
+          <FunctionImportMapping FunctionImportName="salvarProduto" FunctionName="efModel.Store.salvarProduto" />
+          <FunctionImportMapping FunctionImportName="salvarUsuario" FunctionName="efModel.Store.salvarUsuario" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

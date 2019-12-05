@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="efModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="log">
+    <Key>
+      <PropertyRef Name="LOid" />
+    </Key>
+    <Property Name="LOid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LOoperacao" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="LOdata" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="USid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="usuario" Relationship="Self.USid" FromRole="logs" ToRole="usuarios" />
+  </EntityType>
+  <EntityType Name="materiai">
+    <Key>
+      <PropertyRef Name="MAid" />
+    </Key>
+    <Property Name="MAid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="pacotes" Relationship="Self.MAid" FromRole="materiais" ToRole="pacotes" />
+  </EntityType>
+  <EntityType Name="pacote">
+    <Key>
+      <PropertyRef Name="PAid" />
+    </Key>
+    <Property Name="PAid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PAtipo" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PAquantidade" Type="Int32" Nullable="false" />
+    <Property Name="PAlargura" Type="Int32" Nullable="false" />
+    <Property Name="PAaltura" Type="Int32" Nullable="false" />
+    <Property Name="PAprofundidade" Type="Int32" Nullable="false" />
+    <Property Name="PApeso" Type="Int32" Nullable="false" />
+    <Property Name="MAid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="materiai" Relationship="Self.MAid" FromRole="pacotes" ToRole="materiais" />
+  </EntityType>
+  <EntityType Name="produto">
+    <Key>
+      <PropertyRef Name="PRid" />
+    </Key>
+    <Property Name="PRid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PRnome" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PRpeso" Type="Int32" Nullable="false" />
+    <Property Name="PRlargura" Type="Int32" Nullable="false" />
+    <Property Name="PRaltura" Type="Int32" Nullable="false" />
+    <Property Name="PRprofundidade" Type="Int32" Nullable="false" />
+    <Property Name="PRquantidade" Type="Int32" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="USid" />
+    </Key>
+    <Property Name="USid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USnome" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USlogin" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USsenha" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cargo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="logs" Relationship="Self.USid" FromRole="usuarios" ToRole="logs" />
+  </EntityType>
+  <Association Name="USid">
+    <End Role="usuarios" Type="Self.usuario" Multiplicity="1" />
+    <End Role="logs" Type="Self.log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="USid" />
+      </Principal>
+      <Dependent Role="logs">
+        <PropertyRef Name="USid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MAid">
+    <End Role="materiais" Type="Self.materiai" Multiplicity="1" />
+    <End Role="pacotes" Type="Self.pacote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="materiais">
+        <PropertyRef Name="MAid" />
+      </Principal>
+      <Dependent Role="pacotes">
+        <PropertyRef Name="MAid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="logs" EntityType="Self.log" />
+    <EntitySet Name="materiais" EntityType="Self.materiai" />
+    <EntitySet Name="pacotes" EntityType="Self.pacote" />
+    <EntitySet Name="produtos" EntityType="Self.produto" />
+    <EntitySet Name="usuarios" EntityType="Self.usuario" />
+    <AssociationSet Name="USid" Association="Self.USid">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="logs" EntitySet="logs" />
+    </AssociationSet>
+    <AssociationSet Name="MAid" Association="Self.MAid">
+      <End Role="materiais" EntitySet="materiais" />
+      <End Role="pacotes" EntitySet="pacotes" />
+    </AssociationSet>
+    <FunctionImport Name="alterarPacote">
+      <Parameter Name="PAid" Mode="In" Type="Int32" />
+      <Parameter Name="PAtipo" Mode="In" Type="String" />
+      <Parameter Name="PAquantidade" Mode="In" Type="Int32" />
+      <Parameter Name="PAlargura" Mode="In" Type="Int32" />
+      <Parameter Name="PAaltura" Mode="In" Type="Int32" />
+      <Parameter Name="PAprofundidade" Mode="In" Type="Int32" />
+      <Parameter Name="PApeso" Mode="In" Type="Int32" />
+      <Parameter Name="MAmaterial" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioLogado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="alterarProduto">
+      <Parameter Name="PRid" Mode="In" Type="Int32" />
+      <Parameter Name="PRnome" Mode="In" Type="String" />
+      <Parameter Name="PRpeso" Mode="In" Type="Int32" />
+      <Parameter Name="PRlargura" Mode="In" Type="Int32" />
+      <Parameter Name="PRaltura" Mode="In" Type="Int32" />
+      <Parameter Name="PRprofundidade" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioLogado" Mode="In" Type="Int32" />
+      <Parameter Name="PRquantidade" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="alterarUsuario">
+      <Parameter Name="USid" Mode="In" Type="Int32" />
+      <Parameter Name="USnome" Mode="In" Type="String" />
+      <Parameter Name="USlogin" Mode="In" Type="String" />
+      <Parameter Name="USsenha" Mode="In" Type="String" />
+      <Parameter Name="Cargo" Mode="In" Type="String" />
+      <Parameter Name="UserLogado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="salvarPacote">
+      <Parameter Name="PAtipo" Mode="In" Type="String" />
+      <Parameter Name="PAquantidade" Mode="In" Type="Int32" />
+      <Parameter Name="PAlargura" Mode="In" Type="Int32" />
+      <Parameter Name="PAaltura" Mode="In" Type="Int32" />
+      <Parameter Name="PAprofundidade" Mode="In" Type="Int32" />
+      <Parameter Name="PApeso" Mode="In" Type="Int32" />
+      <Parameter Name="MAmaterial" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioLogado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="salvarProduto">
+      <Parameter Name="PRnome" Mode="In" Type="String" />
+      <Parameter Name="PRpeso" Mode="In" Type="Int32" />
+      <Parameter Name="PRlargura" Mode="In" Type="Int32" />
+      <Parameter Name="PRaltura" Mode="In" Type="Int32" />
+      <Parameter Name="PRprofundidade" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioLogado" Mode="In" Type="Int32" />
+      <Parameter Name="PRquantidade" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="salvarUsuario">
+      <Parameter Name="USnome" Mode="In" Type="String" />
+      <Parameter Name="USlogin" Mode="In" Type="String" />
+      <Parameter Name="USsenha" Mode="In" Type="String" />
+      <Parameter Name="Cargo" Mode="In" Type="String" />
+      <Parameter Name="USid" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

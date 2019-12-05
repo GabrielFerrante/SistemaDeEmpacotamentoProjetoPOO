@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="projetoPOOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="pacote">
+    <Key>
+      <PropertyRef Name="PAid" />
+    </Key>
+    <Property Name="PAid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PAnome" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PAtipo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PAquantidade" Type="Int32" Nullable="false" />
+    <Property Name="PAlargura" Type="Int32" Nullable="false" />
+    <Property Name="PAaltura" Type="Int32" Nullable="false" />
+    <Property Name="PAprofundidade" Type="Int32" Nullable="false" />
+    <Property Name="PApeso" Type="Int32" Nullable="false" />
+    <Property Name="PAmaterial" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="produto">
+    <Key>
+      <PropertyRef Name="PRid" />
+    </Key>
+    <Property Name="PRid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PRnome" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PRpeso" Type="Int32" Nullable="false" />
+    <Property Name="PRlargura" Type="Int32" Nullable="false" />
+    <Property Name="PRaltura" Type="Int32" Nullable="false" />
+    <Property Name="PRprofundidade" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="projetoPOOEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="pacotes" EntityType="Self.pacote" />
+    <EntitySet Name="produtos" EntityType="Self.produto" />
+    <FunctionImport Name="alterarPacote">
+      <Parameter Name="PAid" Mode="In" Type="Int32" />
+      <Parameter Name="PAnome" Mode="In" Type="String" />
+      <Parameter Name="PAtipo" Mode="In" Type="String" />
+      <Parameter Name="PAquantidade" Mode="In" Type="Int32" />
+      <Parameter Name="PAlargura" Mode="In" Type="Int32" />
+      <Parameter Name="PAaltura" Mode="In" Type="Int32" />
+      <Parameter Name="PAprofundidade" Mode="In" Type="Int32" />
+      <Parameter Name="PApeso" Mode="In" Type="Int32" />
+      <Parameter Name="PAmaterial" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="alterarProduto">
+      <Parameter Name="PRid" Mode="In" Type="Int32" />
+      <Parameter Name="PRnome" Mode="In" Type="String" />
+      <Parameter Name="PRpeso" Mode="In" Type="Int32" />
+      <Parameter Name="PRlargura" Mode="In" Type="Int32" />
+      <Parameter Name="PRaltura" Mode="In" Type="Int32" />
+      <Parameter Name="PRprofundidade" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="salvarPacote">
+      <Parameter Name="PAnome" Mode="In" Type="String" />
+      <Parameter Name="PAtipo" Mode="In" Type="String" />
+      <Parameter Name="PAquantidade" Mode="In" Type="Int32" />
+      <Parameter Name="PAlargura" Mode="In" Type="Int32" />
+      <Parameter Name="PAaltura" Mode="In" Type="Int32" />
+      <Parameter Name="PAprofundidade" Mode="In" Type="Int32" />
+      <Parameter Name="PApeso" Mode="In" Type="Int32" />
+      <Parameter Name="PAmaterial" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="salvarProduto">
+      <Parameter Name="PRnome" Mode="In" Type="String" />
+      <Parameter Name="PRpeso" Mode="In" Type="Int32" />
+      <Parameter Name="PRlargura" Mode="In" Type="Int32" />
+      <Parameter Name="PRaltura" Mode="In" Type="Int32" />
+      <Parameter Name="PRprofundidade" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="efModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="logs">
+      <EntityTypeMapping TypeName="efModel.log">
+        <MappingFragment StoreEntitySet="logs">
+          <ScalarProperty Name="LOid" ColumnName="LOid" />
+          <ScalarProperty Name="LOoperacao" ColumnName="LOoperacao" />
+          <ScalarProperty Name="LOdata" ColumnName="LOdata" />
+          <ScalarProperty Name="USid" ColumnName="USid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="materiais">
+      <EntityTypeMapping TypeName="efModel.materiai">
+        <MappingFragment StoreEntitySet="materiais">
+          <ScalarProperty Name="MAid" ColumnName="MAid" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pacotes">
+      <EntityTypeMapping TypeName="efModel.pacote">
+        <MappingFragment StoreEntitySet="pacotes">
+          <ScalarProperty Name="PAid" ColumnName="PAid" />
+          <ScalarProperty Name="PAtipo" ColumnName="PAtipo" />
+          <ScalarProperty Name="PAquantidade" ColumnName="PAquantidade" />
+          <ScalarProperty Name="PAlargura" ColumnName="PAlargura" />
+          <ScalarProperty Name="PAaltura" ColumnName="PAaltura" />
+          <ScalarProperty Name="PAprofundidade" ColumnName="PAprofundidade" />
+          <ScalarProperty Name="PApeso" ColumnName="PApeso" />
+          <ScalarProperty Name="MAid" ColumnName="MAid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="produtos">
+      <EntityTypeMapping TypeName="efModel.produto">
+        <MappingFragment StoreEntitySet="produtos">
+          <ScalarProperty Name="PRquantidade" ColumnName="PRquantidade" />
+          <ScalarProperty Name="PRid" ColumnName="PRid" />
+          <ScalarProperty Name="PRnome" ColumnName="PRnome" />
+          <ScalarProperty Name="PRpeso" ColumnName="PRpeso" />
+          <ScalarProperty Name="PRlargura" ColumnName="PRlargura" />
+          <ScalarProperty Name="PRaltura" ColumnName="PRaltura" />
+          <ScalarProperty Name="PRprofundidade" ColumnName="PRprofundidade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuarios">
+      <EntityTypeMapping TypeName="efModel.usuario">
+        <MappingFragment StoreEntitySet="usuarios">
+          <ScalarProperty Name="USid" ColumnName="USid" />
+          <ScalarProperty Name="USnome" ColumnName="USnome" />
+          <ScalarProperty Name="USlogin" ColumnName="USlogin" />
+          <ScalarProperty Name="USsenha" ColumnName="USsenha" />
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="alterarPacote" FunctionName="efModel.Store.alterarPacote" />
+    <FunctionImportMapping FunctionImportName="alterarProduto" FunctionName="efModel.Store.alterarProduto" />
+    <FunctionImportMapping FunctionImportName="alterarUsuario" FunctionName="efModel.Store.alterarUsuario" />
+    <FunctionImportMapping FunctionImportName="salvarPacote" FunctionName="efModel.Store.salvarPacote" />
+    <FunctionImportMapping FunctionImportName="salvarProduto" FunctionName="efModel.Store.salvarProduto" />
+    <FunctionImportMapping FunctionImportName="salvarUsuario" FunctionName="efModel.Store.salvarUsuario" />
+  </EntityContainerMapping>
+</Mapping>

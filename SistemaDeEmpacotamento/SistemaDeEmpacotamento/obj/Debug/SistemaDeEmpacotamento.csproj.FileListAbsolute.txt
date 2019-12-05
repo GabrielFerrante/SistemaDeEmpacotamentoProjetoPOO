@@ -1,0 +1,86 @@
+c:\users\hanna\documents\visual studio 2012\Projects\SistemaDeEmpacotamento\SistemaDeEmpacotamento\bin\Debug\SistemaDeEmpacotamento.exe.config
+c:\users\hanna\documents\visual studio 2012\Projects\SistemaDeEmpacotamento\SistemaDeEmpacotamento\bin\Debug\SistemaDeEmpacotamento.exe
+c:\users\hanna\documents\visual studio 2012\Projects\SistemaDeEmpacotamento\SistemaDeEmpacotamento\bin\Debug\SistemaDeEmpacotamento.pdb
+c:\users\hanna\documents\visual studio 2012\Projects\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.csprojResolveAssemblyReference.cache
+c:\users\hanna\documents\visual studio 2012\Projects\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmLogin.resources
+c:\users\hanna\documents\visual studio 2012\Projects\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.Properties.Resources.resources
+c:\users\hanna\documents\visual studio 2012\Projects\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.csproj.GenerateResource.Cache
+c:\users\hanna\documents\visual studio 2012\Projects\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.exe
+c:\users\hanna\documents\visual studio 2012\Projects\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.pdb
+C:\Users\hanna\documents\visual studio 2012\Projects\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmTelaPrincipal.resources
+D:\SistemaDeEmpacotamento\SistemaDeEmpacotamento\bin\Debug\SistemaDeEmpacotamento.exe.config
+D:\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.exe
+D:\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.pdb
+D:\SistemaDeEmpacotamento\SistemaDeEmpacotamento\bin\Debug\SistemaDeEmpacotamento.exe
+D:\SistemaDeEmpacotamento\SistemaDeEmpacotamento\bin\Debug\SistemaDeEmpacotamento.pdb
+D:\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.csprojResolveAssemblyReference.cache
+D:\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmCadastroEmbalagem.resources
+D:\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmCadastroProduto.resources
+D:\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmCadastroUsuario.resources
+D:\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmCalculo.resources
+D:\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmLogin.resources
+D:\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmQuantidade.resources
+D:\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmResultado.resources
+D:\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmTelaPrincipal.resources
+D:\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.Properties.Resources.resources
+D:\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.csproj.GenerateResource.Cache
+D:\Aulas\ADS\2ºAno\2ºSemestre\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\bin\Debug\SistemaDeEmpacotamento.exe.config
+D:\Aulas\ADS\2ºAno\2ºSemestre\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\bin\Debug\SistemaDeEmpacotamento.exe
+D:\Aulas\ADS\2ºAno\2ºSemestre\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\bin\Debug\SistemaDeEmpacotamento.pdb
+D:\Aulas\ADS\2ºAno\2ºSemestre\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.csprojAssemblyReference.cache
+D:\Aulas\ADS\2ºAno\2ºSemestre\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmCadastroEmbalagem.resources
+D:\Aulas\ADS\2ºAno\2ºSemestre\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmCadastroProduto.resources
+D:\Aulas\ADS\2ºAno\2ºSemestre\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmCadastroUsuario.resources
+D:\Aulas\ADS\2ºAno\2ºSemestre\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmCalculo.resources
+D:\Aulas\ADS\2ºAno\2ºSemestre\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmLogin.resources
+D:\Aulas\ADS\2ºAno\2ºSemestre\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmQuantidade.resources
+D:\Aulas\ADS\2ºAno\2ºSemestre\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmResultado.resources
+D:\Aulas\ADS\2ºAno\2ºSemestre\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmTelaPrincipal.resources
+D:\Aulas\ADS\2ºAno\2ºSemestre\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.Properties.Resources.resources
+D:\Aulas\ADS\2ºAno\2ºSemestre\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.csproj.GenerateResource.cache
+D:\Aulas\ADS\2ºAno\2ºSemestre\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.csproj.CoreCompileInputs.cache
+D:\Aulas\ADS\2ºAno\2ºSemestre\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.exe
+D:\Aulas\ADS\2ºAno\2ºSemestre\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.pdb
+D:\Aulas\ADS\2ºAno\2ºSemestre\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\bin\Debug\EntityFramework.dll
+D:\Aulas\ADS\2ºAno\2ºSemestre\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\bin\Debug\EntityFramework.xml
+D:\Aulas\ADS\2ºAno\2ºSemestre\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.csproj.CopyComplete
+F:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\bin\Debug\SistemaDeEmpacotamento.exe.config
+F:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.exe
+F:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.pdb
+F:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\bin\Debug\SistemaDeEmpacotamento.exe
+F:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\bin\Debug\SistemaDeEmpacotamento.pdb
+F:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\bin\Debug\EntityFramework.dll
+F:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\bin\Debug\EntityFramework.xml
+F:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.csprojResolveAssemblyReference.cache
+F:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmCadastroEmbalagem.resources
+F:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmCadastroProduto.resources
+F:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmCadastroUsuario.resources
+F:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmCalculo.resources
+F:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmLogin.resources
+F:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmQuantidade.resources
+F:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmResultado.resources
+F:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmTelaPrincipal.resources
+F:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.Properties.Resources.resources
+F:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.csproj.GenerateResource.Cache
+E:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\bin\Debug\SistemaDeEmpacotamento.exe.config
+E:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\bin\Debug\SistemaDeEmpacotamento.exe
+E:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\bin\Debug\SistemaDeEmpacotamento.pdb
+E:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\bin\Debug\EntityFramework.dll
+E:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\bin\Debug\EntityFramework.xml
+E:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.csprojAssemblyReference.cache
+E:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmCadastroEmbalagem.resources
+E:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmCadastroProduto.resources
+E:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmCadastroUsuario.resources
+E:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmCalculo.resources
+E:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmLogin.resources
+E:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmQuantidade.resources
+E:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmResultado.resources
+E:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.frmTelaPrincipal.resources
+E:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.Properties.Resources.resources
+E:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.csproj.GenerateResource.cache
+E:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.csproj.CoreCompileInputs.cache
+E:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.csproj.CopyComplete
+E:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.exe
+E:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.pdb
+F:\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.View.frmLogsSistema.resources
+D:\Aulas\ADS\2ºAno\2ºSemestre\ProjetoGSFHNN\SistemaDeEmpacotamento\SistemaDeEmpacotamento\obj\Debug\SistemaDeEmpacotamento.View.frmLogsSistema.resources

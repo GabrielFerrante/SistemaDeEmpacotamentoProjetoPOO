@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="projetoPOOModelStoreContainer" CdmEntityContainer="projetoPOOEntities">
+    <EntitySetMapping Name="pacotes">
+      <EntityTypeMapping TypeName="projetoPOOModel.pacote">
+        <MappingFragment StoreEntitySet="pacotes">
+          <ScalarProperty Name="PAid" ColumnName="PAid" />
+          <ScalarProperty Name="PAnome" ColumnName="PAnome" />
+          <ScalarProperty Name="PAtipo" ColumnName="PAtipo" />
+          <ScalarProperty Name="PAquantidade" ColumnName="PAquantidade" />
+          <ScalarProperty Name="PAlargura" ColumnName="PAlargura" />
+          <ScalarProperty Name="PAaltura" ColumnName="PAaltura" />
+          <ScalarProperty Name="PAprofundidade" ColumnName="PAprofundidade" />
+          <ScalarProperty Name="PApeso" ColumnName="PApeso" />
+          <ScalarProperty Name="PAmaterial" ColumnName="PAmaterial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="produtos">
+      <EntityTypeMapping TypeName="projetoPOOModel.produto">
+        <MappingFragment StoreEntitySet="produtos">
+          <ScalarProperty Name="PRid" ColumnName="PRid" />
+          <ScalarProperty Name="PRnome" ColumnName="PRnome" />
+          <ScalarProperty Name="PRpeso" ColumnName="PRpeso" />
+          <ScalarProperty Name="PRlargura" ColumnName="PRlargura" />
+          <ScalarProperty Name="PRaltura" ColumnName="PRaltura" />
+          <ScalarProperty Name="PRprofundidade" ColumnName="PRprofundidade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="alterarPacote" FunctionName="projetoPOOModel.Store.alterarPacote" />
+    <FunctionImportMapping FunctionImportName="alterarProduto" FunctionName="projetoPOOModel.Store.alterarProduto" />
+    <FunctionImportMapping FunctionImportName="salvarPacote" FunctionName="projetoPOOModel.Store.salvarPacote" />
+    <FunctionImportMapping FunctionImportName="salvarProduto" FunctionName="projetoPOOModel.Store.salvarProduto" />
+  </EntityContainerMapping>
+</Mapping>
